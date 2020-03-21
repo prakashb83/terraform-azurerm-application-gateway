@@ -4,11 +4,9 @@ terraform {
     azurerm = "~> 1.38.0"
   }
 }
-
 locals {
   sku_name = var.waf_enabled ? "WAF_v2" : "Standard_v2"
   sku_tier = var.waf_enabled ? "WAF_v2" : "Standard_v2"
-
   backend_address_pool_name      = "${var.name}-beap"
   frontend_port_name             = "${var.name}-feport"
   frontend_ip_configuration_name = "${var.name}-feip"
